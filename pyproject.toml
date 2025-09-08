@@ -1,0 +1,18 @@
+[project]
+name = "langchain-langgraph-playgrounds"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "beautifulsoup4>=4.13.5",
+    "langchain-community>=0.3.29",
+    "langchain-core>=0.3.75",
+    "langchain-google-genai>=2.1.10",
+    "langchain-tavily>=0.2.11",
+    "langchain-text-splitters>=0.3.11",
+    "langchain[google-genai,groq,openai]>=0.3.27",
+    "langgraph>=0.6.6",
+    "prettyformatter>=2.0.13",
+    "pydantic>=2.11.7",
+]
