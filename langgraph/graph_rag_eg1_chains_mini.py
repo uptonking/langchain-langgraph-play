@@ -1,3 +1,6 @@
+from langchain_text_splitters.character import RecursiveCharacterTextSplitter
+
+
 from typing import TypedDict
 
 import bs4
@@ -50,9 +53,9 @@ print(f"🔢 Total characters: {len(docs[0].page_content)}")
 
 # Even for those models that could fit the full post in their context window, models can struggle to find information in very long inputs.
 # split the Document into chunks. help to retrieve only the most relevant parts of the blog post at run time.
-text_splitter = RecursiveCharacterTextSplitter(
-    chunk_size=1000,
-    chunk_overlap=200,
+text_splitter: RecursiveCharacterTextSplitter = RecursiveCharacterTextSplitter(
+    chunk_size=500,
+    chunk_overlap=100,
     # track index in original document
     add_start_index=True,
 )
