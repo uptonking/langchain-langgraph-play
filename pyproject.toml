@@ -9,6 +9,7 @@ dependencies = [
     "langchain-community>=0.3.29",
     "langchain-core>=0.3.75",
     "langchain-google-genai>=2.1.10",
+    "langchain-openai>=0.3.32",
     "langchain-tavily>=0.2.11",
     "langchain-text-splitters>=0.3.11",
     "langchain[google-genai,groq,openai]>=0.3.27",

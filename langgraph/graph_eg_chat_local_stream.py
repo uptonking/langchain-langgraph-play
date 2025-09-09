@@ -7,7 +7,7 @@ from langgraph.graph import END, START, StateGraph
 from langgraph.graph.message import add_messages
 
 llm = init_chat_model(
-    model="google/gemma-3-4b",
+    model="qwen/qwen3-4b-2507",
     base_url="http://localhost:1234/v1/",
     model_provider="openai",
     api_key="not-needed",

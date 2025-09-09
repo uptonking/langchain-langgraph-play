@@ -4,7 +4,7 @@ from langchain.chat_models import init_chat_model
 
 # llm = init_chat_model("groq:meta-llama/llama-4-scout-17b-16e-instruct")
 llm = init_chat_model(
-    model="google/gemma-3n-e4b",
+    model="qwen/qwen3-4b-2507",
     # because LM Studio mimics OpenAI's API
     model_provider="openai",
     base_url="http://localhost:1234/v1",

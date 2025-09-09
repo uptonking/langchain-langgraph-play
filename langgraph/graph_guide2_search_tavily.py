@@ -61,12 +61,12 @@ def route_tools(
     has tool calls. Otherwise, route to the end.
     """
     if isinstance(state, list):
-        ai_message = state[-1]
+        ai_message = state[-1]  # pyright: ignore[reportArgumentType, reportAssignmentType]
     elif messages := state.get("messages", []):
         ai_message: dict[str, Any] = messages[-1]
     else:
         raise ValueError(f"No messages found in input state to tool_edge: {state}")
-    if hasattr(ai_message, "tool_calls") and len(ai_message.tool_calls) > 0:
+    if hasattr(ai_message, "tool_calls") and len(ai_message.tool_calls) > 0:  # pyright: ignore[reportAttributeAccessIssue]
         return "search"
     return END
 
@@ -93,7 +93,7 @@ graph_builder.add_node("chatbot", chatbot)
 
 
 tool_node = BasicToolNode(tools=[tool])
-graph_builder.add_node("search", tool_node)
+graph_builder.add_node("search", tool_node)  # pyright: ignore[reportArgumentType]
 
 # Conditional edges start from a single node and usually contain "if" statements to route to different nodes by state
 graph_builder.add_conditional_edges(
