@@ -33,7 +33,7 @@ def main():
         # model="groq:llama-3.1-8b-instant",
         model="groq:meta-llama/llama-4-scout-17b-16e-instruct",
         tools=[get_weather],
-        response_format=WeatherResponse,
+        response_format=WeatherResponse,  # pyright: ignore[reportArgumentType]
         # prompt=prompt,
     )
 

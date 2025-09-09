@@ -68,7 +68,7 @@ retriever_tool = create_retriever_tool(
     "retrieve_blog_posts",
     "Search and return information about Lilian Weng blog posts.",
 )
-
+# Test the retriever_tool
 # retriever_tool.invoke({"query": "types of reward hacking"})
 
 
@@ -80,6 +80,7 @@ def generate_query_or_respond(state: MessagesState):
     """Call the model to generate a response based on the current state. Given
     the question, it will decide to retrieve using the retriever tool, or simply respond to the user.
     """
+    # response = response_model.bind_tools([retriever_tool]).invoke(state["messages"])
     response = llm.bind_tools([retriever_tool]).invoke(state["messages"])
     return {"messages": [response]}
 
@@ -99,7 +100,7 @@ GRADE_PROMPT = (
 )
 
 
-# determine whether the retrieved documents are relevant to the question.
+# structured output schema: determine whether the retrieved documents are relevant to the question.
 class GradeDocuments(BaseModel):
     """Grade documents using a binary score for relevance check."""
 
@@ -158,7 +159,7 @@ def grade_documents(
 # grade_documents(input)
 
 
-# 5️⃣ Rewrite question
+# 5️⃣ Rewrite question if irrelevant documents retrived
 
 REWRITE_PROMPT = (
     "Look at the input and try to reason about the underlying semantic intent / meaning.\n"
@@ -228,6 +229,37 @@ def generate_answer(state: MessagesState):
     # response = response_model.invoke([{"role": "user", "content": prompt}])
     response = llm.invoke([{"role": "user", "content": prompt}])
     return {"messages": [response]}
+
+
+# input = {
+#     "messages": convert_to_messages(
+#         [
+#             {
+#                 "role": "user",
+#                 "content": "What does Lilian Weng say about types of reward hacking?",
+#             },
+#             {
+#                 "role": "assistant",
+#                 "content": "",
+#                 "tool_calls": [
+#                     {
+#                         "id": "1",
+#                         "name": "retrieve_blog_posts",
+#                         "args": {"query": "types of reward hacking"},
+#                     }
+#                 ],
+#             },
+#             {
+#                 "role": "tool",
+#                 "content": "reward hacking can be categorized into two types: environment or goal misspecification, and reward tampering",
+#                 "tool_call_id": "1",
+#             },
+#         ]
+#     )
+# }
+
+# response = generate_answer(input)
+# response["messages"][-1].pretty_print()
 
 
 # 7️⃣ Assemble the graph
