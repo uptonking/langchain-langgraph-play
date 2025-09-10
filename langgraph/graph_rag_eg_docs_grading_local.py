@@ -15,7 +15,7 @@ from langchain import hub
 from langchain.chat_models import init_chat_model
 from langchain.tools.retriever import create_retriever_tool
 from langgraph.graph import END, START, MessagesState, StateGraph
-from langgraph.prebuilt import ToolNode, create_react_agent, tools_condition
+from langgraph.prebuilt import ToolNode, tools_condition
 
 # 🧑‍🏫 [Agentic RAG](https://langchain-ai.github.io/langgraph/tutorials/rag/langgraph_agentic_rag/)
 # Retrieval agents are useful when you want an LLM to make a decision about whether to retrieve context from a vectorstore or respond to the user directly.
