@@ -63,6 +63,10 @@ docs = loader.load()
 print(f"🔢 Total characters: {len(docs[0].page_content)}")
 # print(docs[0].page_content[:420])
 
+# retrieved_docs = vector_store.similarity_search("yjs")
+# pprint(retrieved_docs, json=True)
+
+
 # Even for those models that could fit the full post in their context window, models can struggle to find information in very long inputs.
 # split the Document into chunks. help to retrieve only the most relevant parts of the blog post at run time.
 text_splitter = RecursiveCharacterTextSplitter(

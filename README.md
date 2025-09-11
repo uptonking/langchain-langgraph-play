@@ -23,7 +23,7 @@ uv sync
 # no api keys required for local llm
 uv run langgraph/graph_eg_chat_local_mini.py
 
-# rag with local qwen3-4b/qwen3-embedding-0.6b-gguf
+# rag with local qwen3-4b/qwen3-embedding-0.6b(gguf)
 uv run langgraph/graph_rag_eg1_chains_mini_local.py
 
 ```
@@ -37,7 +37,7 @@ uv sync
 # chat with groq/llama-4
 uv run --env-file .env -- langgraph/graph_guide1_chat_simple.py
 
-# rag with gemini-2.5-flash/gemini-embedding-001
+# rag with gemini-2.5-flash/gemini-embedding-001, easy to reach token limit
 uv run --env-file .env -- langgraph/graph_rag_eg1_chains_mini.py
 
 ```
