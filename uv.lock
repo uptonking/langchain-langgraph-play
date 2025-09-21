@@ -1007,6 +1007,8 @@ dependencies = [
     { name = "mlx-vlm" },
     { name = "prettyformatter" },
     { name = "pydantic" },
+    { name = "python-dotenv" },
+    { name = "requests" },
 ]
 
 [package.metadata]
@@ -1024,6 +1026,8 @@ requires-dist = [
     { name = "mlx-vlm", specifier = ">=0.3.3" },
     { name = "prettyformatter", specifier = ">=2.0.13" },
     { name = "pydantic", specifier = ">=2.11.7" },
+    { name = "python-dotenv", specifier = ">=1.1.1" },
+    { name = "requests", specifier = ">=2.32.5" },
 ]
 
 [[package]]
