@@ -212,7 +212,12 @@ def main():
     # Example using the Granite-Docling model with LM Studio or VLLM:
     pipeline_options.vlm_options = openai_compatible_vlm_options(
         model="granite-docling-258m-mlx",  # For VLLM use "ibm-granite/granite-docling-258M"
+        # model="granite-docling-258m",
+        # model="smoldocling-256m-preview-mlx-docling-snap",
+        # model="hf.co/Mungert/SmolDocling-256M-preview-GGUF:BF16",
+        # model="hf.co/vonjack/granite-docling-258M-gguf:F32",
         hostname_and_port="localhost:1234",  # LM studio defaults to port 1234, VLLM to 8000
+        # hostname_and_port="localhost:11434",
         prompt="Convert this page to docling.",
         format=ResponseFormat.DOCTAGS,
         api_key="",
