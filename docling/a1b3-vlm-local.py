@@ -11,7 +11,7 @@ from docling.datamodel.pipeline_options_vlm_model import ApiVlmOptions, Response
 from docling.document_converter import DocumentConverter, PdfFormatOption
 from docling.pipeline.vlm_pipeline import VlmPipeline
 
-# [VLM pipeline with remote model](https://docling-project.github.io/docling/examples/vlm_pipeline_api_model/)
+# 🧑‍🏫 [VLM pipeline with remote model](https://docling-project.github.io/docling/examples/vlm_pipeline_api_model/)
 
 #### Using LM Studio or VLLM (OpenAI-compatible APIs)
 
